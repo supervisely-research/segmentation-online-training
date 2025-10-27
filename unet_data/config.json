@@ -1,0 +1,27 @@
+{
+  "num_classes": 10,
+  "class_names": [
+    "Columella",
+    "Core",
+    "Locule",
+    "Navel",
+    "Pericarp",
+    "Placenta",
+    "Sepal",
+    "Septum",
+    "Tomato",
+    "background"
+  ],
+  "class_to_id": {
+    "Columella": 1,
+    "Core": 2,
+    "Locule": 3,
+    "Navel": 4,
+    "Pericarp": 5,
+    "Placenta": 6,
+    "Sepal": 7,
+    "Septum": 8,
+    "Tomato": 9,
+    "background": 0
+  }
+}
