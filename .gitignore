@@ -125,3 +125,4 @@ docs/modelzoo_statistics.md
 *.jpeg
 *.bmp
 *.gif
+*.npy
