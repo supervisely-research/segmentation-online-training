@@ -1,0 +1,214 @@
+{
+  "model": {
+    "num_classes": 10,
+    "class_names": [
+      "background",
+      "Columella",
+      "Core",
+      "Locule",
+      "Navel",
+      "Pericarp",
+      "Placenta",
+      "Sepal",
+      "Septum",
+      "Tomato"
+    ]
+  },
+  "data": {
+    "train_splits": [
+      {
+        "name": "train_1shot_seed0",
+        "path": "../few_shot_data/unet/train_1shot_seed0",
+        "shots": 1,
+        "seed": 0
+      },
+      {
+        "name": "train_1shot_seed1",
+        "path": "../few_shot_data/unet/train_1shot_seed1",
+        "shots": 1,
+        "seed": 1
+      },
+      {
+        "name": "train_1shot_seed2",
+        "path": "../few_shot_data/unet/train_1shot_seed2",
+        "shots": 1,
+        "seed": 2
+      },
+      {
+        "name": "train_1shot_seed3",
+        "path": "../few_shot_data/unet/train_1shot_seed3",
+        "shots": 1,
+        "seed": 3
+      },
+      {
+        "name": "train_1shot_seed4",
+        "path": "../few_shot_data/unet/train_1shot_seed4",
+        "shots": 1,
+        "seed": 4
+      },
+      {
+        "name": "train_2shot_seed0",
+        "path": "../few_shot_data/unet/train_2shot_seed0",
+        "shots": 2,
+        "seed": 0
+      },
+      {
+        "name": "train_2shot_seed1",
+        "path": "../few_shot_data/unet/train_2shot_seed1",
+        "shots": 2,
+        "seed": 1
+      },
+      {
+        "name": "train_2shot_seed2",
+        "path": "../few_shot_data/unet/train_2shot_seed2",
+        "shots": 2,
+        "seed": 2
+      },
+      {
+        "name": "train_2shot_seed3",
+        "path": "../few_shot_data/unet/train_2shot_seed3",
+        "shots": 2,
+        "seed": 3
+      },
+      {
+        "name": "train_2shot_seed4",
+        "path": "../few_shot_data/unet/train_2shot_seed4",
+        "shots": 2,
+        "seed": 4
+      },
+      {
+        "name": "train_3shot_seed0",
+        "path": "../few_shot_data/unet/train_3shot_seed0",
+        "shots": 3,
+        "seed": 0
+      },
+      {
+        "name": "train_3shot_seed1",
+        "path": "../few_shot_data/unet/train_3shot_seed1",
+        "shots": 3,
+        "seed": 1
+      },
+      {
+        "name": "train_3shot_seed2",
+        "path": "../few_shot_data/unet/train_3shot_seed2",
+        "shots": 3,
+        "seed": 2
+      },
+      {
+        "name": "train_3shot_seed3",
+        "path": "../few_shot_data/unet/train_3shot_seed3",
+        "shots": 3,
+        "seed": 3
+      },
+      {
+        "name": "train_3shot_seed4",
+        "path": "../few_shot_data/unet/train_3shot_seed4",
+        "shots": 3,
+        "seed": 4
+      },
+      {
+        "name": "train_5shot_seed0",
+        "path": "../few_shot_data/unet/train_5shot_seed0",
+        "shots": 5,
+        "seed": 0
+      },
+      {
+        "name": "train_5shot_seed1",
+        "path": "../few_shot_data/unet/train_5shot_seed1",
+        "shots": 5,
+        "seed": 1
+      },
+      {
+        "name": "train_5shot_seed2",
+        "path": "../few_shot_data/unet/train_5shot_seed2",
+        "shots": 5,
+        "seed": 2
+      },
+      {
+        "name": "train_5shot_seed3",
+        "path": "../few_shot_data/unet/train_5shot_seed3",
+        "shots": 5,
+        "seed": 3
+      },
+      {
+        "name": "train_5shot_seed4",
+        "path": "../few_shot_data/unet/train_5shot_seed4",
+        "shots": 5,
+        "seed": 4
+      },
+      {
+        "name": "train_10shot_seed0",
+        "path": "../few_shot_data/unet/train_10shot_seed0",
+        "shots": 10,
+        "seed": 0
+      },
+      {
+        "name": "train_10shot_seed1",
+        "path": "../few_shot_data/unet/train_10shot_seed1",
+        "shots": 10,
+        "seed": 1
+      },
+      {
+        "name": "train_10shot_seed2",
+        "path": "../few_shot_data/unet/train_10shot_seed2",
+        "shots": 10,
+        "seed": 2
+      },
+      {
+        "name": "train_10shot_seed3",
+        "path": "../few_shot_data/unet/train_10shot_seed3",
+        "shots": 10,
+        "seed": 3
+      },
+      {
+        "name": "train_10shot_seed4",
+        "path": "../few_shot_data/unet/train_10shot_seed4",
+        "shots": 10,
+        "seed": 4
+      },
+      {
+        "name": "train_30shot_seed0",
+        "path": "../few_shot_data/unet/train_30shot_seed0",
+        "shots": 30,
+        "seed": 0
+      },
+      {
+        "name": "train_30shot_seed1",
+        "path": "../few_shot_data/unet/train_30shot_seed1",
+        "shots": 30,
+        "seed": 1
+      },
+      {
+        "name": "train_30shot_seed2",
+        "path": "../few_shot_data/unet/train_30shot_seed2",
+        "shots": 30,
+        "seed": 2
+      },
+      {
+        "name": "train_30shot_seed3",
+        "path": "../few_shot_data/unet/train_30shot_seed3",
+        "shots": 30,
+        "seed": 3
+      },
+      {
+        "name": "train_30shot_seed4",
+        "path": "../few_shot_data/unet/train_30shot_seed4",
+        "shots": 30,
+        "seed": 4
+      }
+    ],
+    "val_split": "../few_shot_data/unet/val",
+    "image_size": [
+      512,
+      512
+    ],
+    "augmentation": true
+  },
+  "training": {
+    "batch_size": 4,
+    "epochs": 100,
+    "learning_rate": 0.001,
+    "optimizer": "adam",
+    "loss": "crossentropy"
+  }
+}

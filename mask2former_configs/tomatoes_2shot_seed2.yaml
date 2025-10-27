@@ -1,0 +1,61 @@
+DATASETS:
+  TEST: !!python/tuple
+  - tomatoes_val
+  TRAIN: !!python/tuple
+  - tomatoes_train_2shot_seed2
+INPUT:
+  MAX_SIZE_TEST: 1333
+  MAX_SIZE_TRAIN: 1333
+  MIN_SIZE_TEST: 800
+  MIN_SIZE_TRAIN: !!python/tuple
+  - 480
+  - 512
+  - 544
+  - 576
+  - 608
+  - 640
+  - 672
+  - 704
+  - 736
+  - 768
+  - 800
+MODEL:
+  MASK_FORMER:
+    CLASS_WEIGHT: 2.0
+    DEC_LAYERS: 10
+    DEC_N_POINTS: 4
+    DEEP_SUPERVISION: true
+    DICE_WEIGHT: 5.0
+    DIM_FEEDFORWARD: 2048
+    DROPOUT: 0.0
+    ENC_LAYERS: 0
+    ENC_N_POINTS: 4
+    ENFORCE_INPUT_PROJ: false
+    HIDDEN_DIM: 256
+    IMPORTANCE_SAMPLE_RATIO: 0.75
+    MASK_WEIGHT: 5.0
+    NHEADS: 8
+    NO_OBJECT_WEIGHT: 0.1
+    NUM_OBJECT_QUERIES: 100
+    OVERSAMPLE_RATIO: 3.0
+    PRE_NORM: false
+    SIZE_DIVISIBILITY: 32
+    TRAIN_NUM_POINTS: 12544
+    TRANSFORMER_DECODER_NAME: MultiScaleMaskedTransformerDecoder
+    TRANSFORMER_IN_FEATURE: multi_scale_pixel_decoder
+  SEM_SEG_HEAD:
+    NUM_CLASSES: 9
+  WEIGHTS: model_zoo://COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x/137849600/model_final_f10217.pkl
+OUTPUT_DIR: ../outputs/mask2former_2shot_seed2
+SOLVER:
+  BASE_LR: 5.0e-05
+  CHECKPOINT_PERIOD: 100
+  IMS_PER_BATCH: 2
+  MAX_ITER: 500
+  OPTIMIZER: ADAMW
+  STEPS:
+  - 350
+  - 450
+  WARMUP_ITERS: 50
+  WEIGHT_DECAY: 0.05
+_BASE_: configs/coco/instance-segmentation/maskformer2_R50_bs16_50ep.yaml
