@@ -264,30 +264,64 @@ def generate_few_shot_splits():
     print(f"Detectron2 format: {detectron2_dir}")
     print(f"Shared images: {images_dir}")
 
-def create_unet_split(image_list, img_dir, ann_dir, output_dir, class_to_id):
-    """Create UNet format split"""
+def create_unet_split(image_list, img_dir, ann_dir, output_dir, class_to_id, padding=20, skip_empty=True):
+    """Create UNet format split (cropping background by bbox of all objects).
+    padding: pixels to add around bbox
+    skip_empty: if True, images with no objects are skipped (no background-only samples saved)
+    """
     output_dir.mkdir(exist_ok=True)
     (output_dir / "images").mkdir(exist_ok=True)
     (output_dir / "masks").mkdir(exist_ok=True)
-    
+
     for img_name in image_list:
         img_path = img_dir / img_name
         ann_path = ann_dir / f"{img_name}.json"
-        
+
         if not ann_path.exists():
             continue
-        
-        # Copy image
-        shutil.copy2(img_path, output_dir / "images" / img_name)
-        
-        # Create mask
+
+        # Read original image and create full-size mask
         img = cv2.imread(str(img_path))
-        img_size = (img.shape[1], img.shape[0])
-        
-        mask = create_unet_mask(ann_path, img_size, class_to_id)
-        
-        mask_name = Path(img_name).stem + '.png'
-        cv2.imwrite(str(output_dir / "masks" / mask_name), mask)
+        if img is None:
+            continue
+        h, w = img.shape[:2]
+        img_size = (w, h)
+
+        mask = create_unet_mask(ann_path, img_size, class_to_id)  # existing function
+
+        # find bbox of all non-zero pixels (objects)
+        ys, xs = np.where(mask > 0)
+        if len(xs) == 0 or len(ys) == 0:
+            if skip_empty:
+                # skip background-only images
+                continue
+            else:
+                # save original image and mask if not skipping
+                cropped_img = img
+                cropped_mask = mask
+        else:
+            x1 = max(0, int(xs.min()) - padding)
+            x2 = min(w, int(xs.max()) + padding + 1)
+            y1 = max(0, int(ys.min()) - padding)
+            y2 = min(h, int(ys.max()) + padding + 1)
+
+            cropped_img = img[y1:y2, x1:x2]
+            cropped_mask = mask[y1:y2, x1:x2]
+
+        # Optionally: resize to fixed size expected by UNet training (e.g. 512x512)
+        target_h, target_w = 512, 512  # либо брать из конфига
+        cropped_img = cv2.resize(cropped_img, (target_w, target_h), interpolation=cv2.INTER_LINEAR)
+        # For masks, use nearest interpolation to preserve labels
+        cropped_mask = cv2.resize(cropped_mask, (target_w, target_h), interpolation=cv2.INTER_NEAREST)
+
+        # Save
+        shutil.copy2  # not needed: we already have cropped_img
+        img_out_name = img_name
+        mask_out_name = Path(img_name).stem + '.png'
+        cv2.imwrite(str(output_dir / "images" / img_out_name), cropped_img)
+        # ensure mask datatype is uint8
+        cv2.imwrite(str(output_dir / "masks" / mask_out_name), cropped_mask.astype(np.uint8))
+
 
 def create_coco_split(image_list, img_dir, ann_dir, output_file, 
                      coco_categories, category_to_id, split_prefix):

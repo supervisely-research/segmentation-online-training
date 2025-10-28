@@ -35,4 +35,4 @@ SOLVER:
   - 350
   - 450
   WARMUP_ITERS: 50
-_BASE_: configs/coco/instance-segmentation/maskdino_R50_bs16_50ep_3s_dowsample1_2048.yaml
+_BASE_: ../MaskDINO/configs/coco/instance-segmentation/maskdino_R50_bs16_50ep_3s_dowsample1_2048.yaml
