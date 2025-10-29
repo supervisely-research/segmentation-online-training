@@ -86,9 +86,9 @@ MODEL:
     DEEP_SUPERVISION: true
     DICE_WEIGHT: 5.0
     DIM_FEEDFORWARD: 2048
-    DN: seg
+    DN: 'no'
     DN_NOISE_SCALE: 0.4
-    DN_NUM: 100
+    DN_NUM: 0
     DROPOUT: 0.0
     ENC_LAYERS: 0
     ENFORCE_INPUT_PROJ: false

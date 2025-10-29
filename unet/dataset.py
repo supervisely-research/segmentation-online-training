@@ -3,7 +3,7 @@ import json
 import utils
 
 
-N_CLASSES = 10
+N_CLASSES = 8
 
 
 with utils.DATA_ROOT.joinpath('config.json').open('rt') as f:

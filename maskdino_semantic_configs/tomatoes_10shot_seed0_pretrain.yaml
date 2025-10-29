@@ -1,0 +1,43 @@
+_BASE_: /root/workspace/MaskDINO/configs/ade20k/semantic-segmentation/maskdino_R50_bs16_160k_steplr.yaml
+MODEL:
+  META_ARCHITECTURE: "MaskDINO"
+  WEIGHTS: /root/workspace/maskdino_r50_50ep_100q_celoss_hid1024_3s_semantic_ade20k_48.7miou.pth
+  SEM_SEG_HEAD:
+    NUM_CLASSES: 7
+  MaskDINO:
+    TWO_STAGE: False     
+    BOX_LOSS: False      
+    SEMANTIC_CE_LOSS: True  
+    DN: "no"
+    DN_NUM: 0
+    NUM_OBJECT_QUERIES: 100
+    TEST:
+      SEMANTIC_ON: True
+      INSTANCE_ON: False
+      PANOPTIC_ON: False
+DATASETS:
+  TRAIN: !!python/tuple
+  - tomatoes_sem_seg_train_10shot_seed0
+  TEST: !!python/tuple
+  - tomatoes_sem_seg_val
+SOLVER:
+  IMS_PER_BATCH: 4
+  BASE_LR: 0.0001
+  MAX_ITER: 2000
+  STEPS: !!python/tuple
+  - 1400
+  - 1800
+  WARMUP_ITERS: 100
+  CHECKPOINT_PERIOD: 400
+  BACKBONE_MULTIPLIER: 0.1
+INPUT:
+  DATASET_MAPPER_NAME: "mask_former_semantic"  
+  MIN_SIZE_TRAIN: !!python/tuple
+  - 512
+  MIN_SIZE_TRAIN_SAMPLING: choice
+  MIN_SIZE_TEST: 512
+  MAX_SIZE_TRAIN: 2048
+  MAX_SIZE_TEST: 2048
+TEST:
+  EVAL_PERIOD: 100
+OUTPUT_DIR: /root/workspace/outputs/maskdino_10shot_seed0_pretrain

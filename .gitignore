@@ -126,3 +126,5 @@ docs/modelzoo_statistics.md
 *.bmp
 *.gif
 *.npy
+
+outputs/
