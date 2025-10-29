@@ -23,8 +23,8 @@ from typing import Any, Dict, List, Set
 # Register custom tomatoes datasets
 import sys
 sys.path.insert(0, "/root/workspace")
-import register_datasets
-register_datasets.register_few_shot_datasets()
+import register_semantic_dataset
+register_semantic_dataset.register_tomato_semantic_datasets()
 import torch
 import detectron2.utils.comm as comm
 from detectron2.checkpoint import DetectionCheckpointer
