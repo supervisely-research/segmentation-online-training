@@ -15,8 +15,9 @@ from collections import defaultdict
 DATA_DIR = Path("../data")
 PROJECT_DIR = Path("../project")  
 OUTPUT_DIR = Path("../few_shot_data")
-SHOTS = [1, 2, 3, 5, 10, 30]
+SHOTS = [5, 10, 15, 30, 50]
 NUM_SEEDS = 5
+IGNORE_CLASSES = ['Columella', 'Sepal']
 
 random.seed(42)
 
@@ -177,16 +178,29 @@ def generate_few_shot_splits():
     
     # Load classes
     classes = load_sly_project_meta(PROJECT_DIR)
-    class_to_id = {cls: idx + 1 for idx, cls in enumerate(classes)}
-    class_to_id['background'] = 0
-    
-    category_to_id = {cls: idx + 1 for idx, cls in enumerate(classes)}
+
+    # Filter out ignored classes
+    filtered_classes = [cls for cls in classes if cls not in IGNORE_CLASSES]
+
+    # Create class mapping for UNet (background=0, valid classes=1,2,3...)
+    class_to_id = {'background': 0}
+    for idx, cls in enumerate(filtered_classes):
+        class_to_id[cls] = idx + 1
+
+    # Map ignored classes to background
+    for cls in IGNORE_CLASSES:
+        class_to_id[cls] = 0
+
+    # Create category mapping for COCO (only valid classes)
+    category_to_id = {cls: idx + 1 for idx, cls in enumerate(filtered_classes)}
     coco_categories = [
         {'id': cat_id, 'name': cat_name, 'supercategory': 'none'}
         for cat_name, cat_id in category_to_id.items()
     ]
-    
+
     print(f"Found {len(classes)} classes: {classes}")
+    print(f"Filtered to {len(filtered_classes)} classes (ignored: {IGNORE_CLASSES})")
+    print(f"Active classes: {filtered_classes}")
     
     # Get all training images
     train_img_dir = DATA_DIR / "train" / "img"

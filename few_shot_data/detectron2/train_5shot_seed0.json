@@ -35,7 +35,7 @@
     {
       "id": 1,
       "image_id": 1,
-      "category_id": 9,
+      "category_id": 7,
       "segmentation": [
         [
           2188.0,
@@ -2986,7 +2986,7 @@
     {
       "id": 2,
       "image_id": 2,
-      "category_id": 9,
+      "category_id": 7,
       "segmentation": [
         [
           1067.0,
@@ -3219,7 +3219,7 @@
     {
       "id": 3,
       "image_id": 2,
-      "category_id": 5,
+      "category_id": 4,
       "segmentation": [
         [
           1002.0,
@@ -5858,7 +5858,7 @@
     {
       "id": 4,
       "image_id": 2,
-      "category_id": 6,
+      "category_id": 5,
       "segmentation": [
         [
           1111.0,
@@ -6863,7 +6863,7 @@
     {
       "id": 5,
       "image_id": 2,
-      "category_id": 2,
+      "category_id": 1,
       "segmentation": [
         [
           1164.0,
@@ -7310,7 +7310,7 @@
     {
       "id": 6,
       "image_id": 2,
-      "category_id": 4,
+      "category_id": 3,
       "segmentation": [
         [
           1088.0,
@@ -7425,7 +7425,7 @@
     {
       "id": 7,
       "image_id": 2,
-      "category_id": 8,
+      "category_id": 6,
       "segmentation": [
         [
           1111.0,
@@ -7766,7 +7766,7 @@
     {
       "id": 8,
       "image_id": 2,
-      "category_id": 3,
+      "category_id": 2,
       "segmentation": [
         [
           1244.0,
@@ -8679,7 +8679,7 @@
     {
       "id": 9,
       "image_id": 2,
-      "category_id": 3,
+      "category_id": 2,
       "segmentation": [
         [
           977.0,
@@ -9672,7 +9672,7 @@
     {
       "id": 10,
       "image_id": 3,
-      "category_id": 9,
+      "category_id": 7,
       "segmentation": [
         [
           2347.0,
@@ -13489,7 +13489,7 @@
     {
       "id": 11,
       "image_id": 3,
-      "category_id": 4,
+      "category_id": 3,
       "segmentation": [
         [
           2338.0,
@@ -14194,7 +14194,7 @@
     {
       "id": 12,
       "image_id": 4,
-      "category_id": 5,
+      "category_id": 4,
       "segmentation": [
         [
           2375.0,
@@ -16781,7 +16781,7 @@
     {
       "id": 13,
       "image_id": 4,
-      "category_id": 6,
+      "category_id": 5,
       "segmentation": [
         [
           2391.0,
@@ -18174,7 +18174,7 @@
     {
       "id": 14,
       "image_id": 4,
-      "category_id": 8,
+      "category_id": 6,
       "segmentation": [
         [
           2284.0,
@@ -18801,7 +18801,7 @@
     {
       "id": 15,
       "image_id": 4,
-      "category_id": 8,
+      "category_id": 6,
       "segmentation": [
         [
           2502.0,
@@ -19490,7 +19490,7 @@
     {
       "id": 16,
       "image_id": 4,
-      "category_id": 3,
+      "category_id": 2,
       "segmentation": [
         [
           2309.0,
@@ -20897,7 +20897,7 @@
     {
       "id": 17,
       "image_id": 4,
-      "category_id": 3,
+      "category_id": 2,
       "segmentation": [
         [
           2616.0,
@@ -23006,7 +23006,7 @@
     {
       "id": 18,
       "image_id": 5,
-      "category_id": 9,
+      "category_id": 7,
       "segmentation": [
         [
           2286.0,
@@ -23467,7 +23467,7 @@
     {
       "id": 19,
       "image_id": 5,
-      "category_id": 5,
+      "category_id": 4,
       "segmentation": [
         [
           2148.0,
@@ -29542,7 +29542,7 @@
     {
       "id": 20,
       "image_id": 5,
-      "category_id": 6,
+      "category_id": 5,
       "segmentation": [
         [
           2509.0,
@@ -32011,7 +32011,7 @@
     {
       "id": 21,
       "image_id": 5,
-      "category_id": 2,
+      "category_id": 1,
       "segmentation": [
         [
           2435.0,
@@ -32358,7 +32358,7 @@
     {
       "id": 22,
       "image_id": 5,
-      "category_id": 4,
+      "category_id": 3,
       "segmentation": [
         [
           2360.0,
@@ -32717,7 +32717,7 @@
     {
       "id": 23,
       "image_id": 5,
-      "category_id": 3,
+      "category_id": 2,
       "segmentation": [
         [
           2709.0,
@@ -34527,46 +34527,36 @@
   "categories": [
     {
       "id": 1,
-      "name": "Columella",
-      "supercategory": "none"
-    },
-    {
-      "id": 2,
       "name": "Core",
       "supercategory": "none"
     },
     {
-      "id": 3,
+      "id": 2,
       "name": "Locule",
       "supercategory": "none"
     },
     {
-      "id": 4,
+      "id": 3,
       "name": "Navel",
       "supercategory": "none"
     },
     {
-      "id": 5,
+      "id": 4,
       "name": "Pericarp",
       "supercategory": "none"
     },
     {
-      "id": 6,
+      "id": 5,
       "name": "Placenta",
       "supercategory": "none"
     },
     {
-      "id": 7,
-      "name": "Sepal",
-      "supercategory": "none"
-    },
-    {
-      "id": 8,
+      "id": 6,
       "name": "Septum",
       "supercategory": "none"
     },
     {
-      "id": 9,
+      "id": 7,
       "name": "Tomato",
       "supercategory": "none"
     }

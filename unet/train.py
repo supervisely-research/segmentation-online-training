@@ -250,6 +250,8 @@ def main():
     utils.add_args(parser)
     args = parser.parse_args()
 
+    data_root = Path(args.data_path)
+    utils.DATA_ROOT = data_root
     root = Path(args.root)
     if args.model:
         model = getattr(unet_models, args.model)()
@@ -277,7 +279,7 @@ def main():
     else:
         class_weighs = None
     # loss = Loss(dice_weight=args.dice_weight, class_weights=class_weighs)
-    loss = FocalLoss(gamma=5.0, ignore_index=0)
+    loss = FocalLoss(gamma=2.0, ignore_index=-100)
 
     if args.limit:
         limit = args.limit

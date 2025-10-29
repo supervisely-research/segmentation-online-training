@@ -1,39 +1,37 @@
 {
   "num_classes": 10,
   "class_names": [
-    "Columella",
+    "background",
     "Core",
     "Locule",
     "Navel",
     "Pericarp",
     "Placenta",
-    "Sepal",
     "Septum",
     "Tomato",
-    "background"
+    "Columella",
+    "Sepal"
   ],
   "class_to_id": {
-    "Columella": 1,
-    "Core": 2,
-    "Locule": 3,
-    "Navel": 4,
-    "Pericarp": 5,
-    "Placenta": 6,
-    "Sepal": 7,
-    "Septum": 8,
-    "Tomato": 9,
-    "background": 0
+    "background": 0,
+    "Core": 1,
+    "Locule": 2,
+    "Navel": 3,
+    "Pericarp": 4,
+    "Placenta": 5,
+    "Septum": 6,
+    "Tomato": 7,
+    "Columella": 0,
+    "Sepal": 0
   },
   "category_to_id": {
-    "Columella": 1,
-    "Core": 2,
-    "Locule": 3,
-    "Navel": 4,
-    "Pericarp": 5,
-    "Placenta": 6,
-    "Sepal": 7,
-    "Septum": 8,
-    "Tomato": 9
+    "Core": 1,
+    "Locule": 2,
+    "Navel": 3,
+    "Pericarp": 4,
+    "Placenta": 5,
+    "Septum": 6,
+    "Tomato": 7
   },
   "classes": [
     "Columella",
@@ -47,12 +45,11 @@
     "Tomato"
   ],
   "shots": [
-    1,
-    2,
-    3,
     5,
     10,
-    30
+    15,
+    30,
+    50
   ],
   "num_seeds": 5
 }
